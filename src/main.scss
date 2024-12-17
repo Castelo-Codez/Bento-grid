@@ -1,0 +1,290 @@
+$Purple100: hsl(254, 88%, 90%);
+$Purple500: hsl(256, 67%, 59%);
+$Yellow100: hsl(31, 66%, 93%);
+$Yellow500: hsl(39, 100%, 71%);
+$White: hsl(0, 0%, 100%);
+$Black: hsl(0, 0%, 7%);
+
+html {
+    box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+@font-face {
+    font-family: "DMsans";
+    src: url("../fonts/DMSans-VariableFont_opsz\,wght.ttf");
+}
+@font-face {
+    font-family: "DMsans-italic";
+    src: url("../fonts/DMSans-Italic-VariableFont_opsz\,wght.ttf");
+}
+
+body {
+    font-family: "DMsans";
+    font-size: 18px;
+    background-color: #f5f5f5;
+}
+
+section {
+    padding: 10px;
+    display: grid;
+    gap: 20px;
+
+    @media (min-width: 768px) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        max-width: 1200px;
+        margin: auto;
+    }
+    @media (min-width: 992px) {
+        grid-auto-rows: 4.5rem;
+        grid-template-areas:
+            "create social social schedule"
+            "create social social schedule"
+            "create social social schedule"
+            "create social social schedule"
+            "create manage maintain schedule"
+            "write manage maintain schedule"
+            "write manage maintain schedule"
+            "write audience grow grow"
+            "write audience grow grow"
+            "write audience grow grow";
+    }
+    div.child {
+        border-radius: 10px;
+        & {
+            &:nth-child(1) {
+                background-color: $Purple500;
+                padding: 30px;
+                color: $White;
+                display: flex;
+                flex-direction: column;
+                row-gap: 10px;
+                align-items: center;
+                text-align: center;
+                h2 {
+                    font-size: calc(1.8rem + 2vw);
+                    @media (min-width: 768px) {
+                        font-size: calc(0.8rem + 2vw);
+                    }
+                    font-weight: 500;
+                    b {
+                        color: $Yellow500;
+                    }
+                    span {
+                        font-family: "DMsans-italic";
+                    }
+                }
+                > div {
+                    img {
+                        max-width: calc(100px + 5vw);
+                    }
+                }
+                span {
+                    text-align: inherit;
+                }
+                @media (min-width: 992px) {
+                    grid-area: social;
+                }
+            }
+            &:nth-child(2) {
+                background-color: $White;
+                padding: 10px;
+                font-size: calc(0.6rem + 1vw);
+                div {
+                    margin-bottom: 10px;
+                    img {
+                        width: 100%;
+                    }
+                }
+                h2 {
+                    font-weight: 600;
+                }
+                @media (min-width: 992px) {
+                    grid-area: manage;
+                }
+            }
+            &:nth-child(3) {
+                background-color: $Yellow500;
+                padding: 10px;
+                overflow: hidden;
+                div {
+                    position: relative;
+                    top: calc(4vw + 20px);
+                    img {
+                        max-width: calc(40% + 110px);
+                    }
+                }
+                h2 {
+                    max-width: 250px;
+                    font-weight: 500;
+                    font-size: calc(2.5vw + 0.99rem);
+                    letter-spacing: -2px;
+                    @media (min-width: 768px) {
+                        max-width: 0;
+                        max-width: 100%;
+                    }
+                }
+                @media (min-width: 992px) {
+                    grid-area: maintain;
+                    > div {
+                        top: 10px;
+                    }
+                    h2 {
+                        font-size: calc(1vw + 0.99rem);
+                        max-width: 250px;
+                        letter-spacing: -2px;
+                    }
+                }
+            }
+            &:nth-child(4) {
+                background-color: $Purple100;
+                padding: 20px 10px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                text-align: center;
+                div {
+                    img {
+                        max-width: calc(40% + 110px);
+                    }
+                }
+                h2 {
+                    font-weight: 700;
+                    font-size: calc(1vw + 0.99rem);
+                }
+                span {
+                    font-size: 17px;
+                }
+                @media (min-width: 992px) {
+                    > div {
+                        img {
+                            width: 500px;
+                        }
+                    }
+                    grid-area: schedule;
+                }
+            }
+            &:nth-child(5) {
+                background-color: $Purple500;
+                padding: 20px 10px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+                div {
+                    img {
+                        max-width: calc(40% + 110px);
+                    }
+                }
+                h2 {
+                    color: $White;
+                    font-weight: 500;
+                    font-size: calc(5vw + 0.99rem);
+                }
+                @media (min-width: 992px) {
+                    grid-template-columns: 1fr 1fr;
+                    align-items: center;
+
+                    grid-area: grow;
+                    h2 {
+                        font-size: calc(1.5vw + 0.99rem);
+                        position: relative;
+                        left: -50px;
+                        text-align: left;
+                    }
+                }
+            }
+            &:nth-child(6) {
+                background-color: $White;
+                padding: 20px 10px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 10px;
+                div {
+                    img {
+                        max-width: calc(30% + 110px);
+                    }
+                }
+                h2 {
+                    font-weight: 500;
+                    font-size: calc(6vw + 0.99rem);
+                }
+                @media (min-width: 992px) {
+                    grid-area: audience;
+                    h2 {
+                        font-size: calc(2vw + 0.99rem);
+                    }
+                }
+            }
+            &:nth-child(7) {
+                background-color: $Yellow100;
+                padding: 20px 20px;
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+                div {
+                    img {
+                        max-width: calc(30% + 110px);
+                    }
+                }
+                h2 {
+                    font-weight: 500;
+                    font-size: calc(3.5vw + 0.99rem);
+                    letter-spacing: -2px;
+                    b {
+                        color: $Purple500;
+                        font-family: "DMsans-italic";
+                    }
+                }
+                @media (min-width: 992px) {
+                    grid-area: create;
+                    gap: 10px;
+                    align-content: center;
+                    h2 {
+                        font-size: calc(1.5vw + 0.99rem);
+                    }
+                }
+            }
+            &:nth-child(8) {
+                background-color: $Yellow500;
+                padding: 10px;
+                font-size: calc(0.6rem + 1vw);
+                overflow: hidden;
+                div {
+                    position: relative;
+                    top: calc(4vw + 20px);
+                    img {
+                        max-width: calc(40% + 110px);
+                    }
+                }
+                h2 {
+                    font-weight: 500;
+                    font-size: calc(3.5vw + 0.99rem);
+                    letter-spacing: -2px;
+                    @media (min-width: 768px) {
+                        max-width: 0;
+                        max-width: 100%;
+                    }
+                }
+                @media (min-width: 992px) {
+                    grid-area: write;
+                    div {
+                        top: calc(2vw + 20px);
+                        left: calc(1vw + 10px);
+                    }
+                    h2 {
+                        font-weight: 500;
+                        font-size: calc(1.5vw + 0.99rem);
+                        max-width: 200px;
+                        letter-spacing: -2px;
+                    }
+                }
+            }
+        }
+    }
+}
